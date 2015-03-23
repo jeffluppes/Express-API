@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var GeoJSON = require('mongoose-geojson-schema');
 //GeoJSON
-var BearSchema = new Schema({
-  name: String
+var schema = new mongoose.Schema({
+    geoFeature:GeoJSON.Feature
 });
 
 
 
-module.exports = mongoose.model('Bear', BearSchema);
+module.exports = mongoose.model('Geojson', schema);
