@@ -1,0 +1,15 @@
+{
+    "name": "Express-API",
+    "description": "A-GeoJSON-serving-API",
+    "version": "0.0.1",
+    "author": "Jeffrey-Luppes",
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "dependencies": {
+        "express": "~4.0.0",
+        "mongoose": "~3.6.13",
+        "body-parser": "~1.0.1",
+        "morgan": "*"
+    }
+}
