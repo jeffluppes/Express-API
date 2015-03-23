@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // Bears!
 var BearSchema = new Schema({
-  name: String
+  name:       { type:String },
+  date:       { type:Date, default:Date.now }
 });
 
 

@@ -104,64 +104,64 @@ router.route('/bears/:bear_id')
 // ----------------------------------------------------
 router.route('/geojson')
 // create a geojson object (accessed at POST http://localhost:8080/geojson)
-.post(function(req, res) {
-  var geojson = new Geojson(); // create a new instance of the GeoJSON model
-  geojson = req;
-  geojson.save(function(err) {
-    if (err)
-    res.send(err);
-    res.json({ message: 'GeoJSON created!' });
-  });
-})
-
-
-
-// get all the geojson (accessed at GET http://localhost:8080/api/geojson)
-// I should be fired for this code
-.get(function(req, res) {
-  Geojson.find(function(err, geojson) {
-    if (err)
-    res.send(err);
-    res.json(geojson);
-  });
-});
-
-// on routes that end in /geojson/:geojson_id
-// ----------------------------------------------------
-router.route('/geojson/:geojson_id')
-// get the geojson with that id
-.get(function(req, res) {
-  Geojson.findById(req.params.geojson_id, function(err, geojson) {
-    if (err)
-    res.send(err);
-    res.json(geojson);
-  });
-})
-
-// update the bear with this id
-.put(function(req, res) {
-  Geojson.findById(req.params.bear_id, function(err, geojson) {
-    if (err)
-    res.send(err);
-    geojson.name = req.body.name;
+  .post(function(req, res) {
+    var geojson = new Geojson(); // create a new instance of the GeoJSON model
+    geojson = req;
     geojson.save(function(err) {
       if (err)
       res.send(err);
-      res.json({ message: 'Bear updated!' });
+      res.json({ message: 'GeoJSON created!' });
+    });
+  })
+
+
+
+  // get all the geojson (accessed at GET http://localhost:8080/api/geojson)
+  // Despite horrible nomeclature, should work.
+  .get(function(req, res) {
+    Geojson.find(function(err, geojsons) {
+      if (err)
+        res.send(err);
+      res.json(geojsons);
     });
   });
-})
 
-// delete the bear with this id
-.delete(function(req, res) {
-  Bear.remove({
-    _id: req.params.bear_id
-  }, function(err, bear) {
-    if (err)
-    res.send(err);
-    res.json({ message: 'Successfully deleted' });
+  // on routes that end in /geojson/:geojson_id
+  // ----------------------------------------------------
+  router.route('/geojson/:geojson_id')
+  // get the geojson with that id
+  .get(function(req, res) {
+    Geojson.findById(req.params.geojson_id, function(err, geojson) {
+      if (err)
+      res.send(err);
+      res.json(geojson);
+    });
+  })
+
+  // update the bear with this id
+  .put(function(req, res) {
+    Geojson.findById(req.params.bear_id, function(err, geojson) {
+      if (err)
+      res.send(err);
+      geojson.name = req.body.name;
+      geojson.save(function(err) {
+        if (err)
+        res.send(err);
+        res.json({ message: 'Bear updated!' });
+      });
+    });
+  })
+
+  // delete the bear with this id
+  .delete(function(req, res) {
+    Bear.remove({
+      _id: req.params.bear_id
+    }, function(err, bear) {
+      if (err)
+      res.send(err);
+      res.json({ message: 'Successfully deleted' });
+    });
   });
-});
 
 
 // REGISTER OUR ROUTES -------------------------------
