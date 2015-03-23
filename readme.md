@@ -1,5 +1,5 @@
 #Introduction
-Basic Express API for GeoJSON. Work in progress.
+Basic RESTful Express API for GeoJSON. Work in progress.
 
 #Installation
 1. Run `npm install` in the folder where you've placed these files. This ought to prompt npm to install the dependencies.
@@ -8,3 +8,4 @@ Basic Express API for GeoJSON. Work in progress.
 ###Notes
 - Remember to restart after changing code by ctrl+C and running `node server.js` again. (There probably is a better way, but this didn't take a lot of code changes.)
 - You might have to release the port if something goes wrong. Failing that, just change the port number as defined in `server.js`.
+- Test with cURL or Postman. :-)
