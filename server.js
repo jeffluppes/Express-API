@@ -100,7 +100,7 @@ router.route('/bears/:bear_id')
 
 
 // ======== GEOJSON =========
-// on routes that end in /geojson
+// on routes that end in /geojson - unlikely to work
 // ----------------------------------------------------
 router.route('/geojson')
 // create a geojson object (accessed at POST http://localhost:8080/geojson)

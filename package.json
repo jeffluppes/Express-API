@@ -2,7 +2,7 @@
     "name": "Express-API",
     "description": "A-GeoJSON-serving-API",
     "version": "0.0.1",
-    "author": "Jeffrey-Luppes",
+    "author": "Jeffrey Luppes",
     "scripts": {
         "start": "node ./bin/www"
     },
