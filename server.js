@@ -119,7 +119,7 @@ router.route('/geojson')
 // get all the geojson (accessed at GET http://localhost:8080/api/geojson)
 // I should be fired for this code
 .get(function(req, res) {
-  Geojson.find(function(err, geojsonbits) {
+  Geojson.find(function(err, geojson) {
     if (err)
     res.send(err);
     res.json(geojson);
